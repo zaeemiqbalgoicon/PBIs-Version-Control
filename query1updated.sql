@@ -65,4 +65,3 @@ AND (a.is_rec = 0 or (a.is_rec = 1 and (activity_instances.fk_activity_id is not
 
 # Facility Filter
  AND a.fk_facility_id IN (1905)
-AND from_unixtime(case when a.is_rec = 0 then a.i_started_date else (case when activity_instances.i_occurrence_timestamp is not null then activity_instances.i_occurrence_timestamp else a.i_occurrence_id end) end) > @FixedDate
