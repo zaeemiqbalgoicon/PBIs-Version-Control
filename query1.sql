@@ -61,7 +61,7 @@ AND (a.is_rec = 0 or (a.is_rec = 1 and (activity_instances.fk_activity_id is not
 
 # Facility Filter
  AND tf.TenantId = 489 and tf.IsTestFCT = 0 and tf.ContractEndUTS is null) s 
-   where cast(StartedDate as date)>=cast(@StartDate as date)
+   where s.StartedDate >= @StartDate
 -- and i_present = "present"
 
  -- order by v_title;
