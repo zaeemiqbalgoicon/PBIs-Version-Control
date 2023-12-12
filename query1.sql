@@ -1,3 +1,4 @@
+Select * from (
 select #count(distinct fk_resident_id)
    a.id, a.v_title,a.fk_facility_id,
    departments.v_name as "Department",
@@ -59,7 +60,8 @@ AND (a.is_rec = 0 or (a.is_rec = 1 and (activity_instances.fk_activity_id is not
 
 
 # Facility Filter
- AND tf.TenantId = 489 and tf.IsTestFCT = 0 and tf.ContractEndUTS is null
+ AND tf.TenantId = 489 and tf.IsTestFCT = 0 and tf.ContractEndUTS is null) s 
+   where StartedDate>=@StartDate
 -- and i_present = "present"
 
  -- order by v_title;
