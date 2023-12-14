@@ -65,7 +65,7 @@ AND (a.is_rec = 0 or (a.is_rec = 1 and (activity_instances.fk_activity_id is not
 
 
 # Facility Filter
- AND a.fk_facility_id IN (1905)
+ AND a.fk_facility_id NOT IN (1905)
 ) s 
 where s.occurrenceTime >= @startdate
 AND s.Attendee is not null
